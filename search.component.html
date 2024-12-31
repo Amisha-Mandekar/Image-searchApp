@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Search</title>
     <link rel="stylesheet" href="search.component.css">
 </head>
 <body>
@@ -15,18 +15,17 @@
           (keyup.enter)="onSearch()"
         />
         <button (click)="onSearch()">Search</button>
-      </div>
-      <div class="grid-container">
+    </div>
+
+    <div class="grid-container">
         <div *ngFor="let image of images" class="image-item">
-          <img [src]="image.urls.small" [alt]="image.alt_description" (click)="viewImage(image)" />
-          
+            <img [src]="image.urls.small" [alt]="image.alt_description" (click)="viewImage(image)" />
         </div>
-      </div>
-      <div *ngIf="images.length > 0" class="pagination">
-        <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button></br>
-        
+    </div>
+
+    <div *ngIf="images.length > 0" class="pagination">
+        <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
         <button (click)="nextPage()">Next</button>
-      </div>
-      
+    </div>
 </body>
 </html>
